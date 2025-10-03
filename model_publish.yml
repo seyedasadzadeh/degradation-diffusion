@@ -1,0 +1,10 @@
+# Configuration for publishing model files to a Hugging Face model repository.
+# Edit values as needed. The workflow will use this file as defaults; environment
+# variables and GitHub Secrets can override values (see README in comments).
+
+repo_id: "smasadzadeh/machine-degradation"  # Hugging Face repo id to push to
+model: "timeseries"  # choices: timeseries, deg
+checkpoint: "checkpoints/best.pth"  # optional path to a local checkpoint (e.g. checkpoints/best.pth). If empty, a freshly-initialized model is saved.
+model_def_path: "src/degdiff/model_def.py"  # file to upload with model code
+out_model_filename: "model.safetensors"
+torch_dtype: "float32"  # dtype to save tensors in
