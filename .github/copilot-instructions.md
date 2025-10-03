@@ -4,7 +4,7 @@ This repository is a small demo that trains a time-series diffusion model (in a 
 Keep changes local, minimal, and notebook-friendly unless you extract reusable code into .py modules.
 
 Quick references
-- Primary entry: `learner.ipynb` (all core logic: data generation, models, training loop, sampling).
+- Primary entry: `train_and_validate.ipynb` (all core logic: data generation, models, training loop, sampling).
 - Short project description: `README.md`.
 
 Big picture (what matters)
@@ -32,19 +32,19 @@ pip install torch numpy pandas scikit-learn matplotlib jupyter
 ```
 - Open and iterate in Jupyter (recommended):
 ```bash
-jupyter lab learner.ipynb
+jupyter lab train_and_validate.ipynb
 ```
 - Quick dev loop tips:
   - Reduce `epoch` count (notebook uses up to 50_000) and batch size for quick iteration.
   - If you get device errors on non-Apple machines, replace `.to('mps')` with `.to('cpu')` or `.to('cuda')`.
   - To run cells as a script for CI or reproducible runs, export the notebook to a script:
 ```bash
-jupyter nbconvert --to script learner.ipynb
-python learner.py   # after editing the exported script
+jupyter nbconvert --to script train_and_validate.ipynb
+python train_and_validate.py   # after editing the exported script
 ```
 
-Files & symbols to reference when editing
-- `learner.ipynb` — contains these important classes/functions:
+- Files & symbols to reference when editing
+- `train_and_validate.ipynb` — contains these important classes/functions:
   - `ParisLawDegradation.generate_episode` — produces `episodes`
   - `TimeSeriesDiffusionModel`, `TimeEmbedding`, `TransformerBlock`
   - `DegDiffusion` — alternate denoiser
