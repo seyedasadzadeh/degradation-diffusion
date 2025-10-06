@@ -102,7 +102,7 @@ class DegradationDiffusion(ABC, nn.Module):
         """Optional weight initialization; can be overridden in subclasses."""
         pass
 
-class TimeSeriesDiffusionModel(DegradationDiffusion):
+class TransformerDiffusionModel(DegradationDiffusion):
     """Diffusion model using transformer blocks; supports variable sequence lengths."""
     def __init__(self, channels: int = 1, hidden_dim: int = 32, num_blocks: int = 2, T: int = 100):
         super().__init__(T=T)  # seq_len=None for variable length
