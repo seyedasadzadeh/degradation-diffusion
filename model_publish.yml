@@ -4,7 +4,7 @@
 
 repo_id: "smasadzadeh/machine-degradation"  # Hugging Face repo id to push to
 model: "timeseries"  # choices: timeseries, deg
-checkpoint: "checkpoints/best.pth"  # optional path to a local checkpoint (e.g. checkpoints/best.pth). If empty, a freshly-initialized model is saved.
+checkpoint: "checkpoints/best.safetensors"  # optional path to a local checkpoint (e.g. checkpoints/best.safetensors). If empty, a freshly-initialized model is saved.
 model_def_path: "src/degdiff/model_def.py"  # file to upload with model code
 out_model_filename: "model.safetensors"
 torch_dtype: "float32"  # dtype to save tensors in
