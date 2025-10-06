@@ -29,14 +29,14 @@ def main(config_path):
     # Upload files to Hugging Face
     try:
         upload_file(
-            path=model_def_path,
+            path_or_fileobj=model_def_path,
             path_in_repo='model_def.py',
             repo_id=repo_id,
             repo_type='model'
         )
         print(f"Uploaded {model_def_path} to {repo_id}/model_def.py")
         upload_file(
-            path=checkpoint,
+            path_or_fileobj=checkpoint,
             path_in_repo=out_model_filename,
             repo_id=repo_id,
             repo_type='model'
